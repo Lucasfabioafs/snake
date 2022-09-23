@@ -1,0 +1,58 @@
+﻿Rapport du Projet Snake:
+
+
+Realise par Afonso Lucas et Yi Yuan
+
+
+Enonce du probleme: Realiser un clone du jeux Snake
+
+
+
+
+1)Guide d'utilisation:
+
+Pour utiliser ce programme, il suffit de l'executer, ensuite un menu s'affiche, a vous de choisir a quel mode de jeu vous voulez jouer en cliquant avec le clique gauche de votre souris.
+Lorsque vous avez clique sur le mode de jeu choisi, il suffit d'appuyer sur une touche et le jeu pourra commencer.
+-Le Snake basique est fidele au jeu de base, en effet vous devez manger le plus de pommes possibles pour augmenter la taille de votre serpent. Cependant vous ne pouvez pas sortir des bords du plateau sinon vous perdez et vous ne pouvez pas non plus passer sur votre corps.
+-Le mode pacman lui permet de ne pas perdre si vous sortez des bords du plateau, en effet si vous sortez du bord gauche votre serpent apparaitra sur le bord droit et inversement pour les quatres cotees du plateau cependant vous pouvez tout de meme mourir en revenant sur votre corps.
+-Le mode accelere, lui possede les memes regles que le snake basique cependant au cour du temps votre serpent va voir sa vitesse augmenter rendant le jeux plus difficile
+
+
+Pour tous les modes de jeu vous controlez le serpent avec les fleches directionnelles de votre clavier c'est-a- dire "haut" "bas" "droit" et "gauche".
+
+Si dans le menu vous cliquez sur le bouton rapport alors celui-ci s'ouvrira sur la console. Si le message squeezed text s'affiche il suffit de double cliquer sur celui-ci pour que le rapport s'affiche.
+
+Enfin pour fermer le jeu il suffit de cliquer sur le bouton quitter.
+
+
+
+2)Explications du programme:
+
+Tout d'abord si vous voulez savoir quelle tache effectue chaque fonction il vous suffit d'ouvrir le code et ces renseignements sont donnes sous chaque fonction.
+
+Maintenant, passons a l'explication du programme principal qui appelle les fonctions.
+Premierement le menu qui s'affiche a ete realise a l'aide des simples commandes rectangles de la bibliotheque fltk. En effet nous en avons trace 3 pour ce qui concerne les 3 modes de jeux .Nous avons mis ces rectangles dans une boucle qui attend un clique gauche dans un des rectangles presents grace a des conditions realises pour chaque rectangles : si le clique de la souris se trouve dans les coordonnees d'un rectangle alors on renvoie une valeur booleenne aux variables mode_pacman et au mode_accelere puis on efface tout ce qui est affiche (les rectangles, les textes et les images) et on ferme la boucle du menu qui ainsi laisse place aux lignes codant le jeu .
+Ainsi prend place la boucle du jeu qui va a chaque deplacement (a l'aide des fleches ) renvoyer la direction du serpent puis grace a la fonction new_position_serpent le programme va savoir si le serpent est sorti ou bien si il s'est mordu, ainsi il renverra un break qui fermera la boucle "jouer" mettant ainsi fin a la partie. Et si sa nouvelle position n'indique pas que le serpent a perdu, alors la boucle continue.
+
+L'apparition des pommes est realisee grace a la fonction new_position_serpent en effet si le serpent mange une pomme alors on en fait apparaitre une autre. Cependant il fallait en faire apparaitre une seul au depart et ceci a ete realisee grace a un compteur qui pose une pomme si celui-ci est egal a 1 et lorsque la pomme est pose le compteur est egal a 0 ainsi la condition ne sera plus lu.
+
+L'affichage du score est un simple texte mis dans la boucle et la variable score
+represente la taille de la liste serpent moins un. En effet au debut le serpent ne possede qu'un element et donc le score est de 0 et augmente de un a chaque pomme mangee.
+
+Pour ce qui est de l'affichage du Game Over il suffit d'afficher une image a la sortie de la boucle "jouer", en effet si on sort de celle-ci c'est que le joueur a perdu.
+
+
+
+
+
+3)Information complementaire:
+
+
+Les problemes que nous avons rencontres sont tout d'abord le fait de deplacer le serpent, en effet ce qui nous a pris le plus de temps est la redaction de la fonction new_position_serpent.
+Nous avons ajoute a notre projet quelques elements.
+Premierement des modes de jeux, le pac-man et le snake accelere.
+Nous avons cree un menu disposant d'une petite image mais aussi d'un bouton permettant d'avoir acces a ce rapport.
+Nous nous sommes aides de cours sur internet, cependant nous n'avons pas reussi a faire ouvrir un document pdf ainsi on a du l'afficher dans la console. Toutefois, celle-ci ne pouvant lire les accents, on a du creer un rapport sans aucun accent.
+
+
+En ce qui concerne la repartition du travail: Afonso Lucas a participe a toutes les taches liees au projet et Yi Yuan a aide a la realisation des deplacements de la tete du serpent.
